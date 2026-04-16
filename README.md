@@ -14,8 +14,3 @@ HTML5 · CSS3 · JavaScript ES6 · Accessibilité WCAG
 ## Lancer en local
 Ouvrir `index.html` dans un navigateur. Aucune dépendance serveur.
 
-## ⚠️ À compléter avant mise en ligne
-- Ajouter les images dans `images/`
-- Déposer le CV PDF dans `documents/cv-zakarie-djemai.pdf`
-- Mettre à jour les liens GitHub dans `realisations.html`
-- Mettre à jour les liens LinkedIn dans le footer
