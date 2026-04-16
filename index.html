@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Accueil - Zakarie Djemai · Développeur Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Zakarie Djemai, développeur web junior en reconversion — HTML, CSS, JavaScript, Python Flask, WordPress, PHP, MySQL.">
+  <link rel="shortcut icon" href="./favico/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/svg+xml" href="./favico/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favico/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="./favico/apple-touch-icon.png">
+  <link rel="manifest" href="./favico/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <header class="header" role="banner">
+    <div class="container clearfix">
+      <div class="logo">
+        <a href="index.html" aria-label="Zakarie Djemai — Accueil">
+          <img src="images/Logo-heading.png.png" alt="Logo Zakarie Djemai" style="max-height: 100px;">
+        </a>
+      </div>
+      <div class="box">
+        <button id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <span class="bx bx-menu icon-open"></span>
+          <span class="bx bx-x icon-close"></span>
+        </button>
+        <nav id="nav" tabindex="-1" aria-label="Navigation principale">
+          <ul class="menu list-unstyled">
+            <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+            <li>
+              <a href="realisations.html">Réalisations</a>
+              <ul id="subnav-realisations">
+                <li><a href="realisations.html#html-css">HTML / CSS</a></li>
+                <li><a href="realisations.html#javascript">JavaScript</a></li>
+                <li><a href="realisations.html#python-flask">Python / Flask</a></li>
+                <li><a href="realisations.html#php-mysql">PHP / MySQL</a></li>
+                <li><a href="realisations.html#wordpress">WordPress</a></li>
+                <li><a href="realisations.html#ux-ui">UX / UI Figma</a></li>
+              </ul>
+            </li>
+            <li><a href="parcours.html">Mon Parcours</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu-principal" role="main" style="background: linear-gradient(135deg, var(--bg-light) 0%, var(--accent-light) 100%); min-height: 100vh;">
+
+    <section id="hero" aria-label="Présentation">
+      <div class="container">
+        <div class="grid">
+          <div class="hero-item left">
+            <span class="subtitle">Développeur Web · Recherche stage juillet 2026</span>
+            <h1>Je suis Zakarie Djemai</h1>
+            <p>Développeur web en reconversion, passionné par les interfaces accessibles, le code propre et le numérique responsable. Formé à la Metz Numeric School.</p>
+            <div class="stack-pills" aria-label="Technologies maîtrisées">
+              <span class="pill">HTML/CSS</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">Python</span>
+              <span class="pill">Flask</span>
+              <span class="pill">PHP</span>
+              <span class="pill">MySQL</span>
+              <span class="pill">WordPress</span>
+              <span class="pill">Figma</span>
+            </div>
+            <div class="hero-buttons">
+              <a href="realisations.html" class="btn btn-primary">Voir mes réalisations</a>
+              <a href="contact.html" class="btn btn-outline">Me contacter</a>
+            </div>
+          </div>
+          <div class="hero-item right">
+            <div class="hero-avatar">
+              <img src="images/Zakarie_djemai.png" alt="Photo de Zakarie Djemai, développeur web">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-label="À propos">
+      <div class="container">
+        <h2>À Propos</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>En reconversion professionnelle dans le développement web, je suis passionné par cet univers qui allie logique, créativité et impact concret.</p>
+            <p>Actuellement en formation à la Metz Numeric School, je construis mes compétences par des projets concrets avec une attention forte à la qualité du code, l'accessibilité et la sobriété numérique.</p>
+            <ul class="about-list">
+              <li>L'éthique dans le développement web</li>
+              <li>L'accessibilité numérique (WCAG)</li>
+              <li>Le numérique responsable</li>
+            </ul>
+            <div class="about-qualities">
+              <h3>Mes Qualités</h3>
+              <div class="qualities-grid">
+                <div class="quality-item">
+                  <h4>Autonome</h4>
+                  <p>Capable de gérer mes projets et mon apprentissage de manière indépendante</p>
+                </div>
+                <div class="quality-item">
+                  <h4>Curieux</h4>
+                  <p>Toujours en quête d'apprentissage et de nouvelles technologies</p>
+                </div>
+                <div class="quality-item">
+                  <h4>Persévérant</h4>
+                  <p>Déterminé à relever les défis et à atteindre mes objectifs</p>
+                </div>
+              </div>
+            </div>
+            <a href="parcours.html" class="btn btn-primary">Découvrir mon parcours</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="grid">
+        <div class="grid__item">
+          <img src="images/logo-footer.png.png" alt="Logo Zakarie Djemai" style="max-height: 90px;">
+          <p>Zakarie Djemai</p>
+        </div>
+        <div class="grid__item">
+          <ul class="socials list-unstyled">
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Zakarie Djemai">
+              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            </a></li>
+            <li><a href="https://github.com/zakarie-djemai" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Zakarie Djemai">
+              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
+            </a></li>
+          </ul>
+        </div>
+        <div class="grid__item">
+          <p>Copyright © 2025 - Tous droits réservés</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/burger.js"></script>
+  <script src="js/LiWithSubnav.js"></script>
+</body>
+</html>

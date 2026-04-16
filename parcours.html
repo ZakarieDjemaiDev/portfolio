@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon Parcours - Zakarie Djemai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcours de Zakarie Djemai - Développeur Web en reconversion">
+  <link rel="shortcut icon" href="./favico/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/nav.css">
+  <link rel="stylesheet" href="styles/modal.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <header class="header" role="banner">
+    <div class="container clearfix">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/Logo-heading.png.png" alt="Logo Zakarie Djemai" style="max-height: 100px;">
+        </a>
+      </div>
+      <div class="box">
+        <button id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+          <span class="bx bx-menu icon-open"></span>
+          <span class="bx bx-x icon-close"></span>
+        </button>
+        <nav id="nav" tabindex="-1" aria-label="Navigation principale">
+          <ul class="menu list-unstyled">
+            <li><a href="index.html">Accueil</a></li>
+            <li>
+              <a href="realisations.html">Réalisations</a>
+              <ul id="subnav-realisations">
+                <li><a href="realisations.html#html-css">HTML / CSS</a></li>
+                <li><a href="realisations.html#javascript">JavaScript</a></li>
+                <li><a href="realisations.html#python-flask">Python / Flask</a></li>
+                <li><a href="realisations.html#php-mysql">PHP / MySQL</a></li>
+                <li><a href="realisations.html#wordpress">WordPress</a></li>
+                <li><a href="realisations.html#ux-ui">UX / UI Figma</a></li>
+              </ul>
+            </li>
+            <li><a href="parcours.html" class="active">Mon Parcours</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu-principal" role="main">
+    <div class="container">
+
+      <section class="parcours-hero">
+        <h1>Mon Parcours</h1>
+        <p class="parcours-intro">De la cuisine professionnelle au développement web — une reconversion guidée par la rigueur, la précision et le sens du détail.</p>
+        <button id="open-modal" class="btn btn-primary btn-cv">
+          <span class="bx bx-file-pdf"></span> Voir mon CV
+        </button>
+      </section>
+
+      <!-- FORMATION -->
+      <section class="parcours-section">
+        <h2>Formation</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Développement Web &amp; Web Mobile</h3>
+                <span class="timeline-date">En cours</span>
+              </div>
+              <p class="timeline-company">Metz Numeric School</p>
+              <p>Intégration front-end, Python/Flask, bases PHP/back-end, UX/UI avec Figma. Projets concrets avec focus accessibilité et qualité du code.</p>
+              <div class="timeline-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Licence Arts Plastiques</h3>
+                <span class="timeline-date">2021</span>
+              </div>
+              <p class="timeline-company">Université de Lorraine</p>
+              <p>Sensibilité visuelle et approche de l'interface comme espace fonctionnel et expressif. Base solide pour l'UX/UI design.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EXPÉRIENCES -->
+      <section class="parcours-section">
+        <h2>Expériences professionnelles</h2>
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-dot accent"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Stage — Création site vitrine WordPress</h3>
+                <span class="timeline-date">Nov. 2025</span>
+              </div>
+              <p class="timeline-company">Les Bistrots de Metz · Client réel</p>
+              <p>Conception et mise en ligne d'un site multi-établissements. Maquettage Figma (desktop + mobile), intégration WordPress avec thème Blocksy, CSS sur mesure, configuration de 7 plugins (SEO, sécurité, performance, formulaires, avis, sauvegarde, images). Back-office documenté pour prise en main autonome par le client.</p>
+              <div class="timeline-tags">
+                <span class="tag">WordPress</span>
+                <span class="tag">Blocksy</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Figma</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Responsive</span>
+                <span class="tag">Client réel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Chef de cuisine</h3>
+                <span class="timeline-date">2023 – 2025</span>
+              </div>
+              <p class="timeline-company">Maison Ladurée</p>
+              <p>Management d'une équipe de 2–3 personnes, organisation et priorisation sous pression, respect de standards de qualité élevés. Compétences directement transférées à la gestion de projets web : rigueur, livraison dans les délais, communication.</p>
+              <div class="timeline-tags">
+                <span class="tag">Management</span>
+                <span class="tag">Organisation</span>
+                <span class="tag">Gestion des priorités</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3>Cuisinier</h3>
+                <span class="timeline-date">2015 – 2022</span>
+              </div>
+              <p class="timeline-company">Divers établissements</p>
+              <p>Adaptabilité, travail en équipe et précision dans des environnements à forte cadence.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- OBJECTIF -->
+      <section class="parcours-section objectif-box">
+        <h2>Objectif Professionnel</h2>
+        <p>Actuellement en formation Développeur Web et Web Mobile à la Metz Numeric School, je construis les bases techniques nécessaires pour m'inscrire durablement dans les métiers du numérique.</p>
+        <p>Mon ambition est de contribuer à un numérique souverain, éthique et responsable. Je m'intéresse particulièrement aux infrastructures numériques et à la manière dont elles peuvent devenir des outils au service d'une transition écologique maîtrisée.</p>
+        <p class="disponibilite">📅 Disponible pour un stage à partir du <strong>21 juillet 2026</strong> · Grand Est / Remote</p>
+        <a href="contact.html" class="btn btn-primary">Me contacter</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========== MODALE CV ========== -->
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-inner modal-cv">
+      <button class="modal-close" aria-label="Fermer la modale">
+        <span class="bx bx-x"></span>
+      </button>
+      <div class="modal-header-cv">
+        <h2 id="modal-title">
+          <span class="bx bx-file-pdf"></span> Mon CV
+        </h2>
+        <a href="documents/cv-zakarie-djemai.pdf" download="CV-Zakarie-Djemai.pdf" class="btn-download">
+          <span class="bx bx-download"></span> Télécharger le PDF
+        </a>
+      </div>
+      <div class="modal-scroll">
+        <iframe
+          src="documents/cv-zakarie-djemai.pdf"
+          title="CV Zakarie Djemai"
+          width="100%"
+          height="100%"
+          style="border: none; min-height: 500px;">
+          <p>Votre navigateur ne peut pas afficher le PDF.
+            <a href="documents/cv-zakarie-djemai.pdf" download>Téléchargez-le ici</a>.
+          </p>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="grid">
+        <div class="grid__item">
+          <img src="images/logo-footer.png.png" alt="Logo Footer" style="max-height: 90px;">
+          <p>Zakarie Djemai</p>
+        </div>
+        <div class="grid__item">
+          <ul class="socials list-unstyled">
+            <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/zakarie-djemai" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="grid__item">
+          <p>Copyright © 2025 - Tous droits réservés</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/burger.js"></script>
+  <script src="js/LiWithSubnav.js"></script>
+  <script src="js/modal.js"></script>
+</body>
+</html>
