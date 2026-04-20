@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-zakarie-djemai",
+  "version": "1.0.0",
+  "description": "Portfolio personnel de Zakarie Djemai - Développeur Web",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss styles/main.css -o styles/main.min.css && cleancss styles/nav.css -o styles/nav.min.css && cleancss styles/modal.css -o styles/modal.min.css",
+    "minify-js": "uglifyjs js/burger.js js/LiWithSubnav.js js/modal.js js/contact-form.js -o js/bundle.min.js --source-map",
+    "serve": "npx serve . -p 3000",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "uglify-js": "^3.17.4"
+  },
+  "author": "Zakarie Djemai",
+  "license": "MIT"
+}
