@@ -88,10 +88,3 @@ Modifiez `CNAME` et les URLs dans les meta tags pour votre domaine.
 - **Core Web Vitals** : Optimisés
 - **Bundle size** : Minifié et compressé
 
-## ⚠️ À compléter avant mise en ligne
-- Ajouter les images dans `images/` (notamment `og-image.png` pour Open Graph)
-- Déposer le CV PDF dans `documents/cv-zakarie-djemai.pdf`
-- Remplacer `GA_MEASUREMENT_ID` par votre vrai ID Google Analytics
-- Mettre à jour les liens LinkedIn dans le footer
-- Acheter et configurer le domaine `zakarie-djemai.dev`
-- Tester le déploiement sur GitHub Pages
