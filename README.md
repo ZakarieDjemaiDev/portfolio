@@ -88,3 +88,4 @@ Modifiez `CNAME` et les URLs dans les meta tags pour votre domaine.
 - **Core Web Vitals** : Optimisés
 - **Bundle size** : Minifié et compressé
 
+
