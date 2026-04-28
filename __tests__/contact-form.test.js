@@ -24,7 +24,7 @@ document.body.innerHTML = `
 `;
 
 // Load the contact form script
-const contactFormScript = fs.readFileSync(path.join(__dirname, 'js/contact-form.js'), 'utf8');
+const contactFormScript = fs.readFileSync(path.join(__dirname, '../js/contact-form.js'), 'utf8');
 eval(contactFormScript);
 
 describe('Contact Form Validation', () => {
