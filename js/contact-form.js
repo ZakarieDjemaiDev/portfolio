@@ -21,6 +21,7 @@ const MESSAGES = {
 // ─── UTILITAIRES ─────────────────────────────────────────────
 function showError(input, message) {
   const group = input.closest(".form-group");
+  if (!group) return; // Sécurité si pas de parent
   group.classList.add("error");
   group.classList.remove("success");
   let el = group.querySelector(".error-message");
@@ -38,6 +39,7 @@ function showError(input, message) {
 
 function showSuccess(input) {
   const group = input.closest(".form-group");
+  if (!group) return; // Sécurité si pas de parent
   group.classList.remove("error");
   group.classList.add("success");
   group.querySelector(".error-message")?.remove();
@@ -47,6 +49,7 @@ function showSuccess(input) {
 
 function clearState(input) {
   const group = input.closest(".form-group");
+  if (!group) return; // Sécurité si pas de parent
   group.classList.remove("error", "success");
   group.querySelector(".error-message")?.remove();
   input.removeAttribute("aria-invalid");
@@ -86,10 +89,20 @@ const form = document.getElementById("contact-form");
 
 if (form) {
   form.querySelectorAll("input:not([name='_gotcha']), select, textarea").forEach(input => {
-    input.addEventListener("blur",   () => { if (input.value.trim() || input.required) validateField(input); });
-    input.addEventListener("input",  () => { if (input.closest(".form-group").classList.contains("error")) validateField(input); });
-    if (input.tagName === "SELECT")
+    input.addEventListener("blur", () => {
+      if (input.value.trim() || input.required) validateField(input);
+    });
+
+    input.addEventListener("input", () => {
+      const formGroup = input.closest(".form-group");
+      if (formGroup && formGroup.classList.contains("error")) {
+        validateField(input);
+      }
+    });
+
+    if (input.tagName === "SELECT") {
       input.addEventListener("change", () => validateField(input));
+    }
   });
 
   // ─── ENVOI AJAX FORMSPREE ────────────────────────────────
