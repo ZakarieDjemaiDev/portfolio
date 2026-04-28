@@ -1,0 +1,37 @@
+{
+  "name": "cv-zakarie-djemai",
+  "version": "2.0.0",
+  "description": "CV professionnel de Zakarie Djemai - Développeur Web & Web Mobile",
+  "author": "Zakarie Djemai <zakarie.djemai.dev@gmail.com>",
+  "keywords": [
+    "cv",
+    "resume",
+    "developer",
+    "web",
+    "frontend",
+    "backend",
+    "accessible"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zakarie-djemai/cv"
+  },
+  "homepage": "https://zakarie-djemai.dev",
+  "license": "CC-BY-4.0",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "build": "echo 'No build step required - static HTML only'",
+    "test": "echo 'No tests defined'"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "files": [
+    "index.html",
+    "css/style.css",
+    "images/",
+    "README.md"
+  ]
+}
