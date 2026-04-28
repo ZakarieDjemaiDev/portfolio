@@ -4,6 +4,7 @@
 .DS_Store
 Thumbs.db
 
+
 # IDEs
 .vscode/
 .idea/
@@ -42,3 +43,5 @@ desktop.ini
 *.bak
 *.backup
 *.tmp
+
+.README.md
