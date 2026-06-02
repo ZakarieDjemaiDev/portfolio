@@ -39,6 +39,35 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/nav.css">
 
+  <style>
+    .lang-toggle {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+    .lang-toggle:hover {
+      color: #e2e8f0;
+    }
+    .lang-toggle .fr, .lang-toggle .en {
+      margin: 0 4px;
+    }
+    .lang-toggle .fr.active, .lang-toggle .en.active {
+      color: #3b82f6;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  </style>
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXHJPV4KV3"></script>
   <script>
@@ -100,7 +129,7 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+  <a class="skip-link" href="#contenu-principal" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
 
   <header class="header" role="banner">
     <div class="container clearfix">
@@ -110,24 +139,27 @@
         </a>
       </div>
       <div class="box">
+        <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language">
+          <span class="fr active" data-fr="FR" data-en="FR">FR</span> | <span class="en" data-fr="EN" data-en="EN">EN</span>
+        </button>
         <button id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
           <span class="bx bx-menu icon-open"></span>
           <span class="bx bx-x icon-close"></span>
         </button>
         <nav id="nav" tabindex="-1" aria-label="Navigation principale">
           <ul class="menu list-unstyled">
-            <li><a href="index.html" class="active" aria-current="page">Accueil</a></li>
+            <li><a href="index.html" class="active" aria-current="page" data-fr="Accueil" data-en="Home">Accueil</a></li>
             <li>
-              <a href="realisations.html">Réalisations</a>
+              <a href="realisations.html" data-fr="Réalisations" data-en="Projects">Réalisations</a>
               <ul id="subnav-realisations">
-                <li><a href="hub-energie.html">Hub Énergie France</a></li>
-                <li><a href="realisations.html#projets-phares">Projets principaux</a></li>
-                <li><a href="realisations.html#php-mysql">Exercices back-end</a></li>
-                <li><a href="realisations.html#wordpress">Projet client WordPress</a></li>
+                <li><a href="hub-energie.html" data-fr="Hub Énergie France" data-en="Hub Énergie France">Hub Énergie France</a></li>
+                <li><a href="realisations.html#projets-phares" data-fr="Projets principaux" data-en="Main Projects">Projets principaux</a></li>
+                <li><a href="realisations.html#php-mysql" data-fr="Exercices back-end" data-en="Back-end Exercises">Exercices back-end</a></li>
+                <li><a href="realisations.html#wordpress" data-fr="Projet client WordPress" data-en="WordPress Client Project">Projet client WordPress</a></li>
               </ul>
             </li>
-            <li><a href="parcours.html">Mon Parcours</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="parcours.html" data-fr="Mon Parcours" data-en="My Journey">Mon Parcours</a></li>
+            <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -140,9 +172,9 @@
       <div class="container">
         <div class="grid">
           <div class="hero-item left">
-            <span class="subtitle">Développeur Web · Recherche stage juillet 2026</span>
-            <h1>Je suis Zakarie Djemai</h1>
-            <p>Développeur web en reconversion, passionné par les interfaces accessibles, le code propre et le numérique responsable. Formé à la Metz Numeric School.</p>
+            <span class="subtitle" data-fr="Développeur Web · Recherche stage juillet 2026" data-en="Web Developer · Internship Search July 2026">Développeur Web · Recherche stage juillet 2026</span>
+            <h1 data-fr="Je suis Zakarie Djemai" data-en="I am Zakarie Djemai">Je suis Zakarie Djemai</h1>
+            <p data-fr="Développeur web en reconversion, passionné par les interfaces accessibles, le code propre et le numérique responsable. Formé à la Metz Numeric School." data-en="Career-switching web developer, passionate about accessible interfaces, clean code, and responsible digital practices. Trained at Metz Numeric School.">Développeur web en reconversion, passionné par les interfaces accessibles, le code propre et le numérique responsable. Formé à la Metz Numeric School.</p>
             <div class="stack-pills" aria-label="Technologies maîtrisées">
               <span class="pill">HTML/CSS</span>
               <span class="pill">JavaScript</span>
@@ -154,8 +186,8 @@
               <span class="pill">Figma</span>
             </div>
             <div class="hero-buttons">
-              <a href="realisations.html" class="btn btn-primary">Voir mes réalisations</a>
-              <a href="contact.html" class="btn btn-outline">Me contacter</a>
+              <a href="realisations.html" class="btn btn-primary" data-fr="Voir mes réalisations" data-en="View my projects">Voir mes réalisations</a>
+              <a href="contact.html" class="btn btn-outline" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
             </div>
           </div>
           <div class="hero-item right">
@@ -169,34 +201,34 @@
 
     <section id="about" aria-label="À propos">
       <div class="container">
-        <h2>À Propos</h2>
+        <h2 data-fr="À Propos" data-en="About">À Propos</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>En reconversion professionnelle dans le développement web, je suis passionné par cet univers qui allie logique, créativité et impact concret.</p>
-            <p>Actuellement en formation à la Metz Numeric School, je construis mes compétences par des projets concrets avec une attention forte à la qualité du code, l'accessibilité et la sobriété numérique.</p>
+            <p data-fr="En reconversion professionnelle dans le développement web, je suis passionné par cet univers qui allie logique, créativité et impact concret." data-en="Career-switching into web development, I'm passionate about this field that combines logic, creativity, and tangible impact.">En reconversion professionnelle dans le développement web, je suis passionné par cet univers qui allie logique, créativité et impact concret.</p>
+            <p data-fr="Actuellement en formation à la Metz Numeric School, je construis mes compétences par des projets concrets avec une attention forte à la qualité du code, l'accessibilité et la sobriété numérique." data-en="Currently training at Metz Numeric School, I build my skills through concrete projects with strong focus on code quality, accessibility, and sustainable digital practices.">Actuellement en formation à la Metz Numeric School, je construis mes compétences par des projets concrets avec une attention forte à la qualité du code, l'accessibilité et la sobriété numérique.</p>
             <ul class="about-list">
-              <li>L'éthique dans le développement web</li>
-              <li>L'accessibilité numérique (WCAG)</li>
-              <li>Le numérique responsable</li>
+              <li data-fr="L'éthique dans le développement web" data-en="Ethics in web development">L'éthique dans le développement web</li>
+              <li data-fr="L'accessibilité numérique (WCAG)" data-en="Digital accessibility (WCAG)">L'accessibilité numérique (WCAG)</li>
+              <li data-fr="Le numérique responsable" data-en="Sustainable digital practices">Le numérique responsable</li>
             </ul>
             <div class="about-qualities">
-              <h3>Mes Qualités</h3>
+              <h3 data-fr="Mes Qualités" data-en="My Qualities">Mes Qualités</h3>
               <div class="qualities-grid">
                 <div class="quality-item">
-                  <h4>Autonome</h4>
-                  <p>Capable de gérer mes projets et mon apprentissage de manière indépendante</p>
+                  <h4 data-fr="Autonome" data-en="Independent">Autonome</h4>
+                  <p data-fr="Capable de gérer mes projets et mon apprentissage de manière indépendante" data-en="Able to manage my projects and learning independently">Capable de gérer mes projets et mon apprentissage de manière indépendante</p>
                 </div>
                 <div class="quality-item">
-                  <h4>Curieux</h4>
-                  <p>Toujours en quête d'apprentissage et de nouvelles technologies</p>
+                  <h4 data-fr="Curieux" data-en="Curious">Curieux</h4>
+                  <p data-fr="Toujours en quête d'apprentissage et de nouvelles technologies" data-en="Always seeking to learn and explore new technologies">Toujours en quête d'apprentissage et de nouvelles technologies</p>
                 </div>
                 <div class="quality-item">
-                  <h4>Persévérant</h4>
-                  <p>Déterminé à relever les défis et à atteindre mes objectifs</p>
+                  <h4 data-fr="Persévérant" data-en="Determined">Persévérant</h4>
+                  <p data-fr="Déterminé à relever les défis et à atteindre mes objectifs" data-en="Determined to overcome challenges and achieve my goals">Déterminé à relever les défis et à atteindre mes objectifs</p>
                 </div>
               </div>
             </div>
-            <a href="parcours.html" class="btn btn-primary">Découvrir mon parcours</a>
+            <a href="parcours.html" class="btn btn-primary" data-fr="Découvrir mon parcours" data-en="Discover my journey">Découvrir mon parcours</a>
           </div>
         </div>
       </div>
@@ -222,7 +254,7 @@
           </ul>
         </div>
         <div class="grid__item">
-          <p>Copyright © 2025 - Tous droits réservés</p>
+          <p data-fr="Copyright © 2025 - Tous droits réservés" data-en="Copyright © 2025 - All rights reserved">Copyright © 2025 - Tous droits réservés</p>
         </div>
       </div>
     </div>
@@ -230,5 +262,22 @@
 
   <script src="js/burger.js"></script>
   <script src="js/LiWithSubnav.js"></script>
+  <script src="lang.js"></script>
+  <script>
+    const langToggle = document.querySelector('.lang-toggle');
+    function updateLangToggle() {
+      const current = localStorage.getItem('lang') || 'fr';
+      const frBtn = langToggle.querySelector('.fr');
+      const enBtn = langToggle.querySelector('.en');
+      frBtn.classList.toggle('active', current === 'fr');
+      enBtn.classList.toggle('active', current === 'en');
+    }
+    updateLangToggle();
+    const originalToggleLang = window.toggleLang;
+    window.toggleLang = function() {
+      originalToggleLang();
+      updateLangToggle();
+    };
+  </script>
 </body>
 </html>

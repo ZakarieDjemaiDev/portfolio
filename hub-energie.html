@@ -32,6 +32,35 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/nav.css">
 
+  <style>
+    .lang-toggle {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+    .lang-toggle:hover {
+      color: #e2e8f0;
+    }
+    .lang-toggle .fr, .lang-toggle .en {
+      margin: 0 4px;
+    }
+    .lang-toggle .fr.active, .lang-toggle .en.active {
+      color: #3b82f6;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  </style>
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -199,421 +228,187 @@
     .feature-item {
       background: var(--primary);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.75rem;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
     }
 
     .feature-item:hover {
       transform: translateY(-2px);
-      border-color: var(--accent);
     }
 
-    .feature-item h3 {
-      font-size: 1.1rem;
+    .feature-item h4 {
+      font-size: 1rem;
       margin-bottom: 0.75rem;
       color: var(--accent-light);
     }
 
     .feature-item p {
-      font-size: 0.95rem;
-      margin: 0;
-    }
-
-    .employer-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 1.5rem;
-    }
-
-    .employer-pill {
-      display: inline-block;
-      font-family: var(--font-subheading);
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 6px;
-      background: var(--primary-light);
-      color: var(--text-light);
-      border: 1px solid var(--border);
-    }
-
-    .news-mockup-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .news-card {
-      background: var(--primary);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .news-card:hover {
-      transform: translateY(-2px);
-    }
-
-    .news-image {
-      width: 100%;
-      height: 140px;
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--border) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-muted);
-      font-size: 3rem;
-    }
-
-    .news-content {
-      padding: 1.25rem;
-    }
-
-    .news-badge {
-      display: inline-block;
-      font-family: var(--font-subheading);
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(59, 130, 246, 0.15);
-      color: var(--accent-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .news-title {
       font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-light);
-      margin-bottom: 0.5rem;
-    }
-
-    .news-date {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    .stack-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .stack-item {
-      background: var(--primary);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-    }
-
-    .stack-item strong {
-      display: block;
-      color: var(--accent-light);
-      margin-bottom: 0.5rem;
-      font-family: var(--font-subheading);
-    }
-
-    .stack-item p {
       margin: 0;
-      font-size: 0.95rem;
-    }
-
-    .final-cta {
-      text-align: center;
-      padding: 3rem 0;
-      margin-top: 2rem;
-    }
-
-    .final-cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--accent) 0%, #60a5fa 100%);
-      color: var(--bg-white);
-      padding: 1rem 2.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: var(--font-subheading);
-      font-weight: 600;
-      font-size: 1.05rem;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .final-cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(59, 130, 246, 0.3);
-    }
-
-    .final-cta-caption {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-top: 1rem;
-    }
-
-    main {
-      background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary-light) 100%);
-      padding-bottom: 3rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .project-hero-content h1 {
-        font-size: 2.2rem;
-      }
-
-      .project-hero-content .subtitle {
-        font-size: 1.1rem;
-      }
-
-      .hero-cta-buttons {
-        flex-direction: column;
-      }
-
-      .hero-cta-buttons .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .detail-section h2 {
-        font-size: 1.8rem;
-      }
-
-      .thesis-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .news-mockup-grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+
+  <a class="skip-link" href="#contenu-principal" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
 
   <header class="header" role="banner">
     <div class="container clearfix">
       <div class="logo">
-        <a href="index.html" aria-label="Zakarie Djemai — Accueil">
+        <a href="index.html">
           <img src="images/Logo-heading.png.png" alt="Logo Zakarie Djemai" style="max-height: 100px;">
         </a>
       </div>
       <div class="box">
+        <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language">
+          <span class="fr active" data-fr="FR" data-en="FR">FR</span> | <span class="en" data-fr="EN" data-en="EN">EN</span>
+        </button>
         <button id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
           <span class="bx bx-menu icon-open"></span>
           <span class="bx bx-x icon-close"></span>
         </button>
         <nav id="nav" tabindex="-1" aria-label="Navigation principale">
           <ul class="menu list-unstyled">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#featured-projects" class="active">Projets</a></li>
-            <li><a href="parcours.html">Mon Parcours</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+            <li>
+              <a href="realisations.html" data-fr="Réalisations" data-en="Projects">Réalisations</a>
+              <ul id="subnav-realisations">
+                <li><a href="hub-energie.html" class="active" data-fr="Hub Énergie France" data-en="Hub Énergie France">Hub Énergie France</a></li>
+                <li><a href="realisations.html#projets-phares" data-fr="Projets principaux" data-en="Main Projects">Projets principaux</a></li>
+                <li><a href="realisations.html#php-mysql" data-fr="Exercices back-end" data-en="Back-end Exercises">Exercices back-end</a></li>
+                <li><a href="realisations.html#wordpress" data-fr="Projet client WordPress" data-en="WordPress Client Project">Projet client WordPress</a></li>
+              </ul>
+            </li>
+            <li><a href="parcours.html" data-fr="Mon Parcours" data-en="My Journey">Mon Parcours</a></li>
+            <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
-  <main id="contenu-principal" role="main">
-    <div class="project-detail-hero">
+  <main id="contenu-principal" role="main" style="background: linear-gradient(135deg, var(--bg-light) 0%, var(--primary-light) 100%); min-height: 100vh;">
+
+    <section class="project-detail-hero">
       <div class="container">
-        <a href="index.html#featured-projects" class="back-link"><i class="bx bx-chevron-left"></i>Retour au portfolio</a>
+        <a href="realisations.html" class="back-link" data-fr="← Retour aux projets" data-en="← Back to projects">← Retour aux projets</a>
+
         <div class="project-hero-content">
           <h1>Hub Énergie France ⚡</h1>
-          <p class="subtitle">Plateforme analytique indépendante sur la stratégie énergétique française</p>
+          <p class="subtitle" data-fr="Plateforme analytique indépendante" data-en="Independent analytical platform">Plateforme analytique indépendante</p>
+
           <div class="hero-cta-buttons">
-            <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir la plateforme →</a>
-            <a href="https://github.com/ZakarieDjemaiDev/hub-energie-france" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub</a>
+            <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="btn btn-primary" data-fr="Voir la plateforme →" data-en="View platform →">Voir la plateforme →</a>
+            <a href="https://github.com/ZakarieDjemaiDev/hub-energie-france" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           </div>
+
           <div class="tech-pills-project">
             <span class="tech-pill">Next.js</span>
             <span class="tech-pill">TypeScript</span>
             <span class="tech-pill">Tailwind CSS</span>
-            <span class="tech-pill">Recharts</span>
-            <span class="tech-pill">Mapbox GL</span>
             <span class="tech-pill">RTE API</span>
+            <span class="tech-pill">Mapbox GL</span>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <section class="detail-section">
-      <div class="container">
-        <h2>Contexte & Objectif</h2>
-        <p>Projet conçu comme portfolio technique et outil analytique pour le secteur énergétique français et luxembourgeois. Thèse centrale : le nucléaire combiné aux datacenters souverains peut perturber le mécanisme de merit order, réduire les prix spot d'environ 30%, et positionner la France comme hub numérique européen.</p>
-        <div class="employer-pills">
-          <span class="employer-pill">RTE</span>
-          <span class="employer-pill">EDF</span>
-          <span class="employer-pill">Framatome</span>
-          <span class="employer-pill">TotalEnergies</span>
-          <span class="employer-pill">Creos</span>
-          <span class="employer-pill">BEI</span>
         </div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="container">
-        <h2>La Thèse</h2>
+        <h2 data-fr="Contexte & Objectif" data-en="Context & Goal">Contexte & Objectif</h2>
+        <p data-fr="Hub Énergie France est une plateforme analytique indépendante dédiée à la compréhension de la stratégie énergétique française. En un contexte de transition énergétique, cette plateforme offre une analyse rigoureuse et transparent du rôle du nucléaire, des datacenters souverains et de leur impact sur la souveraineté numérique européenne." data-en="Hub Énergie France is an independent analytical platform dedicated to understanding French energy strategy. In a context of energy transition, this platform offers rigorous and transparent analysis of the role of nuclear energy, sovereign datacenters, and their impact on European digital sovereignty.">Hub Énergie France est une plateforme analytique indépendante dédiée à la compréhension de la stratégie énergétique française. En un contexte de transition énergétique, cette plateforme offre une analyse rigoureuse et transparent du rôle du nucléaire, des datacenters souverains et de leur impact sur la souveraineté numérique européenne.</p>
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <div class="container">
+        <h2 data-fr="La thèse centrale" data-en="The central thesis">La thèse centrale</h2>
+        <p data-fr="Nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne." data-en="Nuclear + sovereign datacenters = merit order disruption and European digital sovereignty.">Nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne.</p>
+
         <div class="thesis-cards">
-          <article class="thesis-card">
+          <div class="thesis-card">
             <div class="icon">⚡</div>
-            <h3>Merit Order</h3>
-            <p>Le nucléaire à coût marginal quasi-nul évince les centrales à gaz, réduisant le prix spot de marché.</p>
-          </article>
-          <article class="thesis-card">
-            <div class="icon">🏭</div>
-            <h3>Datacenters Souverains</h3>
-            <p>Des datacenters colocalisés aux centrales nucléaires créent une demande baseload stable 24h/24, amplifiant l'effet merit order.</p>
-          </article>
-          <article class="thesis-card">
-            <div class="icon">🇫🇷</div>
-            <h3>Souveraineté Numérique</h3>
-            <p>La France substitue sa dépendance aux hyperscalers GAFAM par une infrastructure souveraine génératrice de revenus d'exportation.</p>
-          </article>
+            <h3 data-fr="Merit Order" data-en="Merit Order">Merit Order</h3>
+            <p data-fr="Le nucléaire à coût marginal zéro transforme la courbe du merit order et accélère la transition énergétique." data-en="Nuclear power at zero marginal cost transforms the merit order curve and accelerates the energy transition.">Le nucléaire à coût marginal zéro transforme la courbe du merit order et accélère la transition énergétique.</p>
+          </div>
+
+          <div class="thesis-card">
+            <div class="icon">🖥️</div>
+            <h3 data-fr="Datacenters souverains" data-en="Sovereign Datacenters">Datacenters souverains</h3>
+            <p data-fr="Les datacenters refroidis par eau nécessitent une électricité fiable et bas-carbone — le nucléaire est la solution idéale pour la souveraineté numérique." data-en="Water-cooled datacenters require reliable, low-carbon electricity — nuclear is the ideal solution for digital sovereignty.">Les datacenters refroidis par eau nécessitent une électricité fiable et bas-carbone — le nucléaire est la solution idéale pour la souveraineté numérique.</p>
+          </div>
+
+          <div class="thesis-card">
+            <div class="icon">🇪🇺</div>
+            <h3 data-fr="Souveraineté numérique" data-en="Digital Sovereignty">Souveraineté numérique</h3>
+            <p data-fr="Une infrastructure énergétique française robuste garantit l'indépendance technologique et la compétitivité européenne face aux géants du cloud." data-en="Robust French energy infrastructure guarantees technological independence and European competitiveness against cloud giants.">Une infrastructure énergétique française robuste garantit l'indépendance technologique et la compétitivité européenne face aux géants du cloud.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="container">
-        <h2>Fonctionnalités</h2>
+        <h2 data-fr="Fonctionnalités" data-en="Features">Fonctionnalités</h2>
+
         <div class="features-grid">
-          <article class="feature-item">
-            <h3>Mix énergétique temps réel</h3>
-            <p>Données RTE live via OAuth2. Barres de production, donut chart, comparaison prix mix actuel vs 100% nucléaire, économies par foyer et nationales.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Simulateur Merit Order</h3>
-            <p>Courbe interactive visualisant l'éviction des centrales fossiles par le nucléaire baseload.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Simulation Nucléaire</h3>
-            <p>Sliders comparant mix actuel vs nucléaire étendu sur capacité, émissions CO₂, prix moyen.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Comparateur LCOE</h3>
-            <p>Coût du MWh par filière sur cycle de vie. Sources : Cour des Comptes, AIE, RTE.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Carte Interactive</h3>
-            <p>Mapbox GL, 56 réacteurs français, tooltips custom, puissance installée, statut par site.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Analyse ROI & Dette</h3>
-            <p>3 scénarios (conservateur, réaliste, optimiste) vs dette française sur 15 ans.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Timeline 2025→2070</h3>
-            <p>Scroll cinématique Apple-style, fission → fusion ITER/DEMO.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Veille Énergétique</h3>
-            <p>NewsAPI (EN) + Google News RSS (FR), toggle entre sources, cards avec image et date.</p>
-          </article>
+          <div class="feature-item">
+            <h4 data-fr="Mix Énergétique" data-en="Energy Mix">Mix Énergétique</h4>
+            <p data-fr="Visualisez le mix énergétique temps réel avec les données de RTE." data-en="Visualize real-time energy mix with RTE data.">Visualisez le mix énergétique temps réel avec les données de RTE.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4 data-fr="Merit Order" data-en="Merit Order">Merit Order</h4>
+            <p data-fr="Comprenez le dispatching des centrales et l'impact du nucléaire." data-en="Understand the plant dispatch and nuclear impact.">Comprenez le dispatching des centrales et l'impact du nucléaire.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4 data-fr="Simulation Nucléaire" data-en="Nuclear Simulation">Simulation Nucléaire</h4>
+            <p data-fr="Explorez les scénarios « et si » avec un modèle de simulation avancé." data-en="Explore \"what-if\" scenarios with an advanced simulation model.">Explorez les scénarios « et si » avec un modèle de simulation avancé.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4 data-fr="ROI & Dette" data-en="ROI & Debt">ROI & Dette</h4>
+            <p data-fr="Analysez le retour sur investissement et l'impact budgétaire des projets énergétiques." data-en="Analyze ROI and budget impact of energy projects.">Analysez le retour sur investissement et l'impact budgétaire des projets énergétiques.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4 data-fr="LCOE" data-en="LCOE">LCOE</h4>
+            <p data-fr="Comparez le coût du cycle de vie des différentes technologies énergétiques." data-en="Compare levelized cost of energy across technologies.">Comparez le coût du cycle de vie des différentes technologies énergétiques.</p>
+          </div>
+
+          <div class="feature-item">
+            <h4 data-fr="Timeline 2025→2070" data-en="Timeline 2025→2070">Timeline 2025→2070</h4>
+            <p data-fr="Une feuille de route détaillée pour la transition énergétique française." data-en="A detailed roadmap for French energy transition.">Une feuille de route détaillée pour la transition énergétique française.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="container">
-        <h2>Veille Énergétique Intégrée</h2>
-        <p>Fil d'actualités énergétiques en temps réel — sources anglophones via NewsAPI et francophones via Google News RSS. Toggle entre les deux flux, cards avec image, source et date.</p>
-        <div class="news-mockup-grid">
-          <article class="news-card">
-            <div class="news-image">📰</div>
-            <div class="news-content">
-              <span class="news-badge">RTE</span>
-              <div class="news-title">Capacités nucléaires 2026</div>
-              <div class="news-date">Il y a 2 jours</div>
-            </div>
-          </article>
-          <article class="news-card">
-            <div class="news-image">⚡</div>
-            <div class="news-content">
-              <span class="news-badge">Le Monde Énergie</span>
-              <div class="news-title">Prix spot EPEX Spot record</div>
-              <div class="news-date">Il y a 1 jour</div>
-            </div>
-          </article>
-          <article class="news-card">
-            <div class="news-image">🔋</div>
-            <div class="news-content">
-              <span class="news-badge">Energy News</span>
-              <div class="news-title">EU Energy Policy Update</div>
-              <div class="news-date">Aujourd'hui</div>
-            </div>
-          </article>
-        </div>
+        <h2 data-fr="Rigueur analytique" data-en="Analytical rigour">Rigueur analytique</h2>
+        <p data-fr="Chaque affirmation s'appuie sur des données officielles (RTE, Cour des Comptes, AIE, ITER). Les méthodologies sont transparentes et documentées." data-en="Every claim is backed by official data (RTE, Audit Office, IEA, ITER). Methodologies are transparent and documented.">Chaque affirmation s'appuie sur des données officielles (RTE, Cour des Comptes, AIE, ITER). Les méthodologies sont transparentes et documentées.</p>
       </div>
     </section>
 
     <section class="detail-section">
       <div class="container">
-        <h2>Rigueur Analytique</h2>
-        <p>Toutes les données sont sourcées et les hypothèses explicitées. Outil analytique indépendant, pas militant.</p>
-        <div class="employer-pills">
-          <span class="employer-pill">RTE</span>
-          <span class="employer-pill">EPEX Spot</span>
-          <span class="employer-pill">Cour des Comptes</span>
-          <span class="employer-pill">AIE</span>
-          <span class="employer-pill">EDF</span>
-          <span class="employer-pill">ITER Organization</span>
+        <h2 data-fr="Stack technique" data-en="Tech stack">Stack technique</h2>
+        <div class="tech-pills-project" style="margin-top: 2rem;">
+          <span class="tech-pill">Next.js 16</span>
+          <span class="tech-pill">TypeScript</span>
+          <span class="tech-pill">Tailwind CSS</span>
+          <span class="tech-pill">RTE Eco2mix API</span>
+          <span class="tech-pill">Mapbox GL JS</span>
+          <span class="tech-pill">Vercel Deploy</span>
+          <span class="tech-pill">next-intl</span>
+          <span class="tech-pill">JSON-LD Schema</span>
         </div>
       </div>
     </section>
 
-    <section class="detail-section">
-      <div class="container">
-        <h2>Stack Technique</h2>
-        <div class="stack-grid">
-          <div class="stack-item">
-            <strong>Framework & Langage</strong>
-            <p>Next.js 14 App Router · TypeScript</p>
-          </div>
-          <div class="stack-item">
-            <strong>Style & Design</strong>
-            <p>Tailwind CSS v4 · Responsive Design</p>
-          </div>
-          <div class="stack-item">
-            <strong>Graphiques & Visualisation</strong>
-            <p>Recharts · Custom SVG Charts</p>
-          </div>
-          <div class="stack-item">
-            <strong>Carte Interactive</strong>
-            <p>Mapbox GL · Geolocation</p>
-          </div>
-          <div class="stack-item">
-            <strong>Données & API</strong>
-            <p>RTE OAuth2 · NewsAPI · Google News RSS</p>
-          </div>
-          <div class="stack-item">
-            <strong>Déploiement</strong>
-            <p>Vercel · Git · GitHub Actions</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="container">
-        <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener noreferrer" class="final-cta-button">
-          Voir la plateforme en ligne →
-        </a>
-        <p class="final-cta-caption">Projet solo — architecture, données et hypothèses analytiques par Zak. Code produit avec Claude.</p>
-      </div>
-    </section>
   </main>
 
   <footer role="contentinfo">
@@ -625,16 +420,16 @@
         </div>
         <div class="grid__item">
           <ul class="socials list-unstyled">
-            <li><a href="https://www.linkedin.com/in/zakarie-djemai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Zakarie Djemai">
-              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            <li><a href="https://www.linkedin.com/in/zakarie-djemai" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
             </a></li>
-            <li><a href="https://github.com/ZakarieDjemaiDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Zakarie Djemai">
-              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
+            <li><a href="https://github.com/ZakarieDjemaiDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg class="icon" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
             </a></li>
           </ul>
         </div>
         <div class="grid__item">
-          <p>Copyright © 2025 - Tous droits réservés</p>
+          <p data-fr="Copyright © 2025 - Tous droits réservés" data-en="Copyright © 2025 - All rights reserved">Copyright © 2025 - Tous droits réservés</p>
         </div>
       </div>
     </div>
@@ -642,5 +437,22 @@
 
   <script src="js/burger.js"></script>
   <script src="js/LiWithSubnav.js"></script>
+  <script src="lang.js"></script>
+  <script>
+    const langToggle = document.querySelector('.lang-toggle');
+    function updateLangToggle() {
+      const current = localStorage.getItem('lang') || 'fr';
+      const frBtn = langToggle.querySelector('.fr');
+      const enBtn = langToggle.querySelector('.en');
+      frBtn.classList.toggle('active', current === 'fr');
+      enBtn.classList.toggle('active', current === 'en');
+    }
+    updateLangToggle();
+    const originalToggleLang = window.toggleLang;
+    window.toggleLang = function() {
+      originalToggleLang();
+      updateLangToggle();
+    };
+  </script>
 </body>
 </html>

@@ -26,7 +26,7 @@
   <meta property="twitter:image" content="https://zakariedjemaidev.github.io/portfolio/images/HubEnergie1.png">
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.googletagmanager.com; frame-src 'self' https://formspree.io;">
-  
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXHJPV4KV3"></script>
   <script>
@@ -48,10 +48,39 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/nav.css">
+
+  <style>
+    .lang-toggle {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+    .lang-toggle:hover {
+      color: #e2e8f0;
+    }
+    .lang-toggle .fr, .lang-toggle .en {
+      margin: 0 4px;
+    }
+    .lang-toggle .fr.active, .lang-toggle .en.active {
+      color: #3b82f6;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <a class="skip-link" href="#contenu-principal">Aller au contenu principal</a>
+  <a class="skip-link" href="#contenu-principal" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
 
   <header class="header" role="banner">
     <div class="container clearfix">
@@ -61,23 +90,26 @@
         </a>
       </div>
       <div class="box">
+        <button class="lang-toggle" onclick="toggleLang()" aria-label="Toggle language">
+          <span class="fr active" data-fr="FR" data-en="FR">FR</span> | <span class="en" data-fr="EN" data-en="EN">EN</span>
+        </button>
         <button id="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
           <span class="bx bx-menu icon-open"></span>
           <span class="bx bx-x icon-close"></span>
         </button>
         <nav id="nav" tabindex="-1" aria-label="Navigation principale">
           <ul class="menu list-unstyled">
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
             <li>
-              <a href="realisations.html" class="active">Réalisations</a>
+              <a href="realisations.html" class="active" data-fr="Réalisations" data-en="Projects">Réalisations</a>
               <ul id="subnav-realisations">
-                <li><a href="#projets-phares">Projets principaux</a></li>
-                <li><a href="#php-mysql">Exercices back-end</a></li>
-                <li><a href="#wordpress">Projet client WordPress</a></li>
+                <li><a href="#projets-phares" data-fr="Projets principaux" data-en="Main Projects">Projets principaux</a></li>
+                <li><a href="#php-mysql" data-fr="Exercices back-end" data-en="Back-end Exercises">Exercices back-end</a></li>
+                <li><a href="#wordpress" data-fr="Projet client WordPress" data-en="WordPress Client Project">Projet client WordPress</a></li>
               </ul>
             </li>
-            <li><a href="parcours.html">Mon Parcours</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="parcours.html" data-fr="Mon Parcours" data-en="My Journey">Mon Parcours</a></li>
+            <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -88,18 +120,18 @@
     <div class="container">
 
       <section class="realisations-hero">
-        <h1>Mes Réalisations</h1>
-        <p class="realisations-intro">Projets réalisés en formation, en stage et en autonomie — organisés par technologie.</p>
+        <h1 data-fr="Mes Réalisations" data-en="My Projects">Mes Réalisations</h1>
+        <p class="realisations-intro" data-fr="Projets réalisés en formation, en stage et en autonomie — organisés par technologie." data-en="Projects completed during training, internships and independently — organized by technology.">Projets réalisés en formation, en stage et en autonomie — organisés par technologie.</p>
       </section>
 
       <section class="stack-section" id="projets-phares">
         <h2 class="stack-section-title">
-          <span class="stack-badge">Projets principaux</span>
-          Carousel des projets illustrés
+          <span class="stack-badge" data-fr="Projets principaux" data-en="Main Projects">Projets principaux</span>
+          <span data-fr="Carousel des projets illustrés" data-en="Illustrated project carousel">Carousel des projets illustrés</span>
         </h2>
         <div class="cards-grid">
           <article class="project-card" onclick="openCardModal('hub-energie')">
-            <p class="project-card-label">PROJET PERSONNEL · ÉNERGIE</p>
+            <p class="project-card-label" data-fr="PROJET PERSONNEL · ÉNERGIE" data-en="PERSONAL PROJECT · ENERGY">PROJET PERSONNEL · ÉNERGIE</p>
             <h3>Hub Énergie France ⚡</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
@@ -108,7 +140,7 @@
               <img src="images/HubEnergie3.png" alt="Aperçu Hub Énergie France - timeline énergétique" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Plateforme analytique indépendante sur la stratégie énergétique française — merit order, simulation nucléaire, mix temps réel, timeline 2025→2070.</p>
+            <p data-fr="Plateforme analytique indépendante sur la stratégie énergétique française — merit order, simulation nucléaire, mix temps réel, timeline 2025→2070." data-en="Independent analytical platform on French energy strategy — merit order, nuclear simulation, real-time mix, timeline 2025→2070.">Plateforme analytique indépendante sur la stratégie énergétique française — merit order, simulation nucléaire, mix temps réel, timeline 2025→2070.</p>
             <div class="project-tags">
               <span class="tag">Next.js</span>
               <span class="tag">TypeScript</span>
@@ -119,25 +151,25 @@
             <div class="project-links">
               <a href="hub-energie.html" class="link-github">
                 <svg width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                Voir le projet →
+                <span data-fr="Voir le projet →" data-en="View project →">Voir le projet →</span>
               </a>
               <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="link-github">
                 <svg width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-                Live ↗
+                <span data-fr="Live ↗" data-en="Live ↗">Live ↗</span>
               </a>
             </div>
           </article>
 
           <article class="project-card">
-            <p class="project-card-label">Projet personnel</p>
-            <h3>Ce portfolio (cas d'etude)</h3>
+            <p class="project-card-label" data-fr="Projet personnel" data-en="Personal project">Projet personnel</p>
+            <h3 data-fr="Ce portfolio (cas d'etude)" data-en="This portfolio (case study)">Ce portfolio (cas d'etude)</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image precedente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
               <img src="images/portfolio-ui-1.png" alt="Apercu du portfolio - page contact" class="project-preview carousel-image is-active">
               <img src="images/portfolio-ui-2.png" alt="Apercu du portfolio - page d'accueil" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Site portfolio multi-pages responsive avec composants accessibles (menu burger, sous-menus clavier, modale, formulaire JS).</p>
+            <p data-fr="Site portfolio multi-pages responsive avec composants accessibles (menu burger, sous-menus clavier, modale, formulaire JS)." data-en="Multi-page responsive portfolio site with accessible components (hamburger menu, keyboard submenus, modal, JS form).">Site portfolio multi-pages responsive avec composants accessibles (menu burger, sous-menus clavier, modale, formulaire JS).</p>
             <div class="project-tags">
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
@@ -153,15 +185,15 @@
           </article>
 
           <article class="project-card">
-            <p class="project-card-label">Examen Front-End</p>
-            <h3>Projet Front</h3>
+            <p class="project-card-label" data-fr="Examen Front-End" data-en="Front-End Exam">Examen Front-End</p>
+            <h3 data-fr="Projet Front" data-en="Front Project">Projet Front</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
               <img src="images/projet-front-1.png" alt="Aperçu projet front - écran stratégie" class="project-preview carousel-image is-active">
               <img src="images/projet-front-2.png" alt="Aperçu projet front - écran à propos" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Site front-end thématique réalisé en examen, avec navigation multi-pages et mise en page éditoriale.</p>
+            <p data-fr="Site front-end thématique réalisé en examen, avec navigation multi-pages et mise en page éditoriale." data-en="Thematic front-end site created during exam, with multi-page navigation and editorial layout.">Site front-end thématique réalisé en examen, avec navigation multi-pages et mise en page éditoriale.</p>
             <div class="project-tags">
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
@@ -176,15 +208,15 @@
           </article>
 
           <article class="project-card">
-            <p class="project-card-label">Projet scolaire · Équipe</p>
-            <h3>LowScore — Zil Lab</h3>
+            <p class="project-card-label" data-fr="Projet scolaire · Équipe" data-en="SCHOOL PROJECT · TEAM">Projet scolaire · Équipe</p>
+            <h3 data-fr="LowScore — Zil Lab" data-en="LowScore — Zil Lab">LowScore — Zil Lab</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
               <img src="images/zil-lab-1.png" alt="Aperçu Zil Lab - accueil" class="project-preview carousel-image is-active">
               <img src="images/zil-lab-2.png" alt="Aperçu Zil Lab - quiz profil" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Application web de recommandation de jeux vidéo via quiz JS et API Flask avec logique de profil.</p>
+            <p data-fr="Application web de recommandation de jeux vidéo via quiz JS et API Flask avec logique de profil." data-en="Web app for video game recommendations via JS quiz and Flask API with profile logic.">Application web de recommandation de jeux vidéo via quiz JS et API Flask avec logique de profil.</p>
             <div class="project-tags">
               <span class="tag">Python</span>
               <span class="tag">Flask</span>
@@ -200,15 +232,15 @@
           </article>
 
           <article class="project-card">
-            <p class="project-card-label">UX/UI · Figma</p>
-            <h3>Maquettage application mobile</h3>
+            <p class="project-card-label" data-fr="UX/UI · Figma" data-en="UX/UI · Figma">UX/UI · Figma</p>
+            <h3 data-fr="Maquettage application mobile" data-en="Mobile app design">Maquettage application mobile</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
               <img src="images/figma-uxui-1.png" alt="Maquette mobile Figma - dashboard tâches" class="project-preview carousel-image is-active">
               <img src="images/figma-uxui-2.png" alt="Maquette mobile Figma - écrans projet" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Conception UI d'une application mobile : hiérarchie visuelle, composants, écrans clés et parcours utilisateur.</p>
+            <p data-fr="Conception UI d'une application mobile : hiérarchie visuelle, composants, écrans clés et parcours utilisateur." data-en="UI design of a mobile app: visual hierarchy, components, key screens and user journey.">Conception UI d'une application mobile : hiérarchie visuelle, composants, écrans clés et parcours utilisateur.</p>
             <div class="project-tags">
               <span class="tag">Figma</span>
               <span class="tag">UX/UI</span>
@@ -219,19 +251,18 @@
         </div>
       </section>
 
-
       <!-- ─── PHP / MYSQL ─── -->
       <section class="stack-section" id="php-mysql">
         <h2 class="stack-section-title">
-          <span class="stack-badge">Exercices back-end</span>
-          Back-end & bases de données
+          <span class="stack-badge" data-fr="Exercices back-end" data-en="Back-end Exercises">Exercices back-end</span>
+          <span data-fr="Back-end & bases de données" data-en="Back-end & databases">Back-end & bases de données</span>
         </h2>
         <div class="cards-grid">
 
           <article class="project-card">
-            <p class="project-card-label">TP Formation</p>
-            <h3>Initiation PHP — Scripts dynamiques</h3>
-            <p>Premiers scripts PHP : traitement de formulaires côté serveur, manipulation de variables, structures conditionnelles et boucles. Intégration dans des pages HTML dynamiques.</p>
+            <p class="project-card-label" data-fr="TP Formation" data-en="Training Workshop">TP Formation</p>
+            <h3 data-fr="Initiation PHP — Scripts dynamiques" data-en="PHP Introduction — Dynamic Scripts">Initiation PHP — Scripts dynamiques</h3>
+            <p data-fr="Premiers scripts PHP : traitement de formulaires côté serveur, manipulation de variables, structures conditionnelles et boucles. Intégration dans des pages HTML dynamiques." data-en="First PHP scripts: server-side form processing, variable manipulation, conditional structures and loops. Integration into dynamic HTML pages.">Premiers scripts PHP : traitement de formulaires côté serveur, manipulation de variables, structures conditionnelles et boucles. Intégration dans des pages HTML dynamiques.</p>
             <div class="project-tags">
               <span class="tag">PHP</span>
               <span class="tag">HTML</span>
@@ -247,9 +278,9 @@
           </article>
 
           <article class="project-card">
-            <p class="project-card-label">TP Formation</p>
-            <h3>Base de données MySQL — Modélisation & requêtes</h3>
-            <p>Conception d'un schéma de base de données relationnelle, création de tables, clés primaires et étrangères. Requêtes SQL : SELECT, INSERT, UPDATE, DELETE, jointures et filtres.</p>
+            <p class="project-card-label" data-fr="TP Formation" data-en="Training Workshop">TP Formation</p>
+            <h3 data-fr="Base de données MySQL — Modélisation & requêtes" data-en="MySQL Database — Modeling & Queries">Base de données MySQL — Modélisation & requêtes</h3>
+            <p data-fr="Conception d'un schéma de base de données relationnelle, création de tables, clés primaires et étrangères. Requêtes SQL : SELECT, INSERT, UPDATE, DELETE, jointures et filtres." data-en="Design of a relational database schema, table creation, primary and foreign keys. SQL queries: SELECT, INSERT, UPDATE, DELETE, joins and filters.">Conception d'un schéma de base de données relationnelle, création de tables, clés primaires et étrangères. Requêtes SQL : SELECT, INSERT, UPDATE, DELETE, jointures et filtres.</p>
             <div class="project-tags">
               <span class="tag">MySQL</span>
               <span class="tag">SQL</span>
@@ -270,14 +301,14 @@
       <!-- ─── WORDPRESS ─── -->
       <section class="stack-section" id="wordpress">
         <h2 class="stack-section-title">
-          <span class="stack-badge">Projet client WordPress</span>
-          Intégration CMS & client réel
+          <span class="stack-badge" data-fr="Projet client WordPress" data-en="WordPress Client Project">Projet client WordPress</span>
+          <span data-fr="Intégration CMS & client réel" data-en="CMS Integration & real client">Intégration CMS & client réel</span>
         </h2>
         <div class="cards-grid">
 
           <article class="project-card">
-            <p class="project-card-label">Stage · Client réel</p>
-            <h3>Les Bistrots de Metz — Site vitrine</h3>
+            <p class="project-card-label" data-fr="Stage · Client réel" data-en="Internship · Real client">Stage · Client réel</p>
+            <h3 data-fr="Les Bistrots de Metz — Site vitrine" data-en="Les Bistrots de Metz — Showcase site">Les Bistrots de Metz — Site vitrine</h3>
             <div class="project-carousel" data-carousel>
               <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
               <img src="https://raw.githubusercontent.com/ZakarieDjemaiDev/WordPressVitrine/main/images/Capture%20d%27%C3%A9cran%202025-12-03%20133248.png" alt="Bistrots de Metz - aperçu page d'accueil" class="project-preview carousel-image is-active">
@@ -285,7 +316,7 @@
               <img src="https://raw.githubusercontent.com/ZakarieDjemaiDev/WordPressVitrine/main/images/Capture%20d%27%C3%A9cran%202025-12-14%20231749.png" alt="Bistrots de Metz - aperçu page établissement" class="project-preview carousel-image">
               <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
             </div>
-            <p>Conception et mise en ligne d'un site multi-établissements pour un groupe de restaurants messins. Maquettage Figma (desktop + mobile), intégration WordPress thème Blocksy, CSS sur mesure (palette Cappuccino Chic), configuration de 7 plugins (Rank Math SEO, Wordfence, WP Fastest Cache, Contact Form 7, WP Customer Reviews, UpdraftPlus, Smush). Back-office documenté pour prise en main autonome.</p>
+            <p data-fr="Conception et mise en ligne d'un site multi-établissements pour un groupe de restaurants messins. Maquettage Figma (desktop + mobile), intégration WordPress thème Blocksy, CSS sur mesure (palette Cappuccino Chic), configuration de 7 plugins (Rank Math SEO, Wordfence, WP Fastest Cache, Contact Form 7, WP Customer Reviews, UpdraftPlus, Smush). Back-office documenté pour prise en main autonome." data-en="Design and launch of a multi-location website for a group of restaurants in Metz. Figma mockup (desktop + mobile), WordPress integration with Blocksy theme, custom CSS (Cappuccino Chic palette), configuration of 7 plugins (Rank Math SEO, Wordfence, WP Fastest Cache, Contact Form 7, WP Customer Reviews, UpdraftPlus, Smush). Documented back-office for independent use.">Conception et mise en ligne d'un site multi-établissements pour un groupe de restaurants messins. Maquettage Figma (desktop + mobile), intégration WordPress thème Blocksy, CSS sur mesure (palette Cappuccino Chic), configuration de 7 plugins (Rank Math SEO, Wordfence, WP Fastest Cache, Contact Form 7, WP Customer Reviews, UpdraftPlus, Smush). Back-office documenté pour prise en main autonome.</p>
             <div class="project-tags">
               <span class="tag">WordPress</span>
               <span class="tag">Blocksy</span>
@@ -306,7 +337,6 @@
         </div>
       </section>
 
-
     </div>
   </main>
 
@@ -325,28 +355,28 @@
       <div class="modal-layout">
         <!-- Sidebar -->
         <aside class="modal-sidebar">
-          <h2>Hub Énergie France ⚡</h2>
-          <p class="modal-subtitle">Plateforme analytique indépendante</p>
+          <h2 data-fr="Hub Énergie France ⚡" data-en="Hub Énergie France ⚡">Hub Énergie France ⚡</h2>
+          <p class="modal-subtitle" data-fr="Plateforme analytique indépendante" data-en="Independent analytical platform">Plateforme analytique indépendante</p>
 
           <div class="modal-stats">
-            <span>8 outils</span>
+            <span data-fr="8 outils" data-en="8 tools">8 outils</span>
             <span>·</span>
-            <span>5 sources</span>
+            <span data-fr="5 sources" data-en="5 sources">5 sources</span>
             <span>·</span>
-            <span>Temps réel</span>
+            <span data-fr="Temps réel" data-en="Real-time">Temps réel</span>
           </div>
 
           <nav class="modal-nav">
-            <a href="https://hub-energie-france.vercel.app/mix-energetique" target="_blank" rel="noopener">Mix Énergétique</a>
-            <a href="https://hub-energie-france.vercel.app/merit-order" target="_blank" rel="noopener">Merit Order</a>
-            <a href="https://hub-energie-france.vercel.app/simulation-nucleaire" target="_blank" rel="noopener">Simulation</a>
-            <a href="https://hub-energie-france.vercel.app/timeline" target="_blank" rel="noopener">Timeline</a>
-            <a href="https://hub-energie-france.vercel.app/lcoe" target="_blank" rel="noopener">LCOE</a>
-            <a href="https://hub-energie-france.vercel.app/blog" target="_blank" rel="noopener">Blog</a>
+            <a href="https://hub-energie-france.vercel.app/mix-energetique" target="_blank" rel="noopener" data-fr="Mix Énergétique" data-en="Energy Mix">Mix Énergétique</a>
+            <a href="https://hub-energie-france.vercel.app/merit-order" target="_blank" rel="noopener" data-fr="Merit Order" data-en="Merit Order">Merit Order</a>
+            <a href="https://hub-energie-france.vercel.app/simulation-nucleaire" target="_blank" rel="noopener" data-fr="Simulation" data-en="Simulation">Simulation</a>
+            <a href="https://hub-energie-france.vercel.app/timeline" target="_blank" rel="noopener" data-fr="Timeline" data-en="Timeline">Timeline</a>
+            <a href="https://hub-energie-france.vercel.app/lcoe" target="_blank" rel="noopener" data-fr="LCOE" data-en="LCOE">LCOE</a>
+            <a href="https://hub-energie-france.vercel.app/blog" target="_blank" rel="noopener" data-fr="Blog" data-en="Blog">Blog</a>
           </nav>
 
           <div class="modal-buttons">
-            <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Voir la plateforme →</a>
+            <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="btn btn-primary" data-fr="Voir la plateforme →" data-en="View platform →">Voir la plateforme →</a>
             <a href="https://github.com/ZakarieDjemaiDev/hub-energie-france" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           </div>
         </aside>
@@ -368,13 +398,13 @@
 
           <!-- À Propos -->
           <section class="modal-section">
-            <h3>À Propos</h3>
-            <p>Hub Énergie France est une plateforme analytique indépendante sur la stratégie énergétique française. Thèse centrale : nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne.</p>
+            <h3 data-fr="À Propos" data-en="About">À Propos</h3>
+            <p data-fr="Hub Énergie France est une plateforme analytique indépendante sur la stratégie énergétique française. Thèse centrale : nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne." data-en="Hub Énergie France is an independent analytical platform on French energy strategy. Central thesis: nuclear + sovereign datacenters = merit order disruption and European digital sovereignty.">Hub Énergie France est une plateforme analytique indépendante sur la stratégie énergétique française. Thèse centrale : nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne.</p>
           </section>
 
           <!-- Sources -->
           <section class="modal-section">
-            <h3>Sources</h3>
+            <h3 data-fr="Sources" data-en="Sources">Sources</h3>
             <div class="modal-sources">
               <span>RTE</span>
               <span>·</span>
@@ -410,7 +440,7 @@
           </ul>
         </div>
         <div class="grid__item">
-          <p>Copyright © 2026 - Tous droits réservés</p>
+          <p data-fr="Copyright © 2026 - Tous droits réservés" data-en="Copyright © 2026 - All rights reserved">Copyright © 2026 - Tous droits réservés</p>
         </div>
       </div>
     </div>
@@ -488,7 +518,6 @@
       }
     }
 
-    // Close modal when clicking close button
     document.querySelectorAll('.modal-close').forEach((btn) => {
       btn.addEventListener('click', (e) => {
         const modal = e.target.closest('.card-modal');
@@ -499,7 +528,6 @@
       });
     });
 
-    // Initialize modal carousel
     function initModalCarousel(cardId) {
       const carousel = document.querySelector('[data-carousel-modal="' + cardId + '"]');
       if (!carousel) return;
@@ -519,7 +547,6 @@
       nextBtn.addEventListener('click', () => show(index + 1));
     }
 
-    // Close modal when clicking overlay
     document.querySelectorAll('.modal-overlay').forEach((overlay) => {
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
@@ -532,7 +559,6 @@
       });
     });
 
-    // Close modal on Escape key
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         document.querySelectorAll('.card-modal[aria-hidden="false"]').forEach((modal) => {
@@ -541,6 +567,23 @@
         });
       }
     });
+  </script>
+  <script src="lang.js"></script>
+  <script>
+    const langToggle = document.querySelector('.lang-toggle');
+    function updateLangToggle() {
+      const current = localStorage.getItem('lang') || 'fr';
+      const frBtn = langToggle.querySelector('.fr');
+      const enBtn = langToggle.querySelector('.en');
+      frBtn.classList.toggle('active', current === 'fr');
+      enBtn.classList.toggle('active', current === 'en');
+    }
+    updateLangToggle();
+    const originalToggleLang = window.toggleLang;
+    window.toggleLang = function() {
+      originalToggleLang();
+      updateLangToggle();
+    };
   </script>
 </body>
 </html>
