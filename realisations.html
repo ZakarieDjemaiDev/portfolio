@@ -90,6 +90,36 @@
           Carousel des projets illustrés
         </h2>
         <div class="cards-grid">
+          <article class="project-card" onclick="openCardModal('hub-energie')">
+            <p class="project-card-label">PROJET PERSONNEL · ÉNERGIE</p>
+            <h3>Hub Énergie France ⚡</h3>
+            <div class="project-carousel" data-carousel>
+              <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
+              <img src="images/HubEnergie1.png" alt="Aperçu Hub Énergie France - dashboard analytique" class="project-preview carousel-image is-active">
+              <img src="images/HubEnergie2.png" alt="Aperçu Hub Énergie France - simulation merit order" class="project-preview carousel-image">
+              <img src="images/HubEnergie3.png" alt="Aperçu Hub Énergie France - timeline énergétique" class="project-preview carousel-image">
+              <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
+            </div>
+            <p>Plateforme analytique indépendante sur la stratégie énergétique française — merit order, simulation nucléaire, mix temps réel, timeline 2025→2070.</p>
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">RTE API</span>
+              <span class="tag">Mapbox GL</span>
+            </div>
+            <div class="project-links">
+              <a href="hub-energie.html" class="link-github">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                Voir le projet →
+              </a>
+              <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="link-github">
+                <svg width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                Live ↗
+              </a>
+            </div>
+          </article>
+
           <article class="project-card">
             <p class="project-card-label">Projet personnel</p>
             <h3>Ce portfolio (cas d'etude)</h3>
@@ -279,6 +309,81 @@
     </div>
   </div>
 
+  <div class="card-modal" id="hub-energie-modal" aria-hidden="true">
+    <div class="modal-overlay" onclick="closeCardModal(event)"></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Fermer"><i class='bx bx-x' aria-hidden="true"></i></button>
+
+      <div class="modal-layout">
+        <!-- Sidebar -->
+        <aside class="modal-sidebar">
+          <h2>Hub Énergie France ⚡</h2>
+          <p class="modal-subtitle">Plateforme analytique indépendante</p>
+
+          <div class="modal-stats">
+            <span>8 outils</span>
+            <span>·</span>
+            <span>5 sources</span>
+            <span>·</span>
+            <span>Temps réel</span>
+          </div>
+
+          <nav class="modal-nav">
+            <a href="#mix">Mix Énergétique</a>
+            <a href="#merit">Merit Order</a>
+            <a href="#simulation">Simulation</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#lcoe">LCOE</a>
+            <a href="#blog">Blog</a>
+          </nav>
+
+          <div class="modal-buttons">
+            <a href="https://hub-energie-france.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">Voir la plateforme →</a>
+            <a href="https://github.com/ZakarieDjemaiDev/hub-energie-france" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="modal-main">
+          <!-- Image Carousel -->
+          <div class="modal-carousel-section">
+            <div class="modal-carousel" data-carousel-modal="hub-energie">
+              <button class="carousel-btn prev" type="button" aria-label="Image précédente"><i class='bx bx-chevron-left' aria-hidden="true"></i></button>
+              <div class="modal-image-container">
+                <img src="images/HubEnergie1.png" alt="Hub Énergie - Dashboard analytique" class="modal-carousel-image is-active">
+                <img src="images/HubEnergie2.png" alt="Hub Énergie - Simulation merit order" class="modal-carousel-image">
+                <img src="images/HubEnergie3.png" alt="Hub Énergie - Timeline énergétique" class="modal-carousel-image">
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Image suivante"><i class='bx bx-chevron-right' aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+          <!-- À Propos -->
+          <section class="modal-section">
+            <h3>À Propos</h3>
+            <p>Hub Énergie France est une plateforme analytique indépendante sur la stratégie énergétique française. Thèse centrale : nucléaire + datacenters souverains = disruption du merit order et souveraineté numérique européenne.</p>
+          </section>
+
+          <!-- Sources -->
+          <section class="modal-section">
+            <h3>Sources</h3>
+            <div class="modal-sources">
+              <span>RTE</span>
+              <span>·</span>
+              <span>EPEX Spot</span>
+              <span>·</span>
+              <span>Cour des Comptes</span>
+              <span>·</span>
+              <span>AIE</span>
+              <span>·</span>
+              <span>ITER</span>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="container">
       <div class="grid">
@@ -354,6 +459,78 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
         closeLightbox();
+      }
+    });
+
+    // Card Modal Functions
+    function openCardModal(cardId) {
+      const modal = document.getElementById(cardId + '-modal');
+      if (modal) {
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        initModalCarousel(cardId);
+      }
+    }
+
+    function closeCardModal(event) {
+      const modal = event.target.closest('.card-modal');
+      if (modal) {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close modal when clicking close button
+    document.querySelectorAll('.modal-close').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const modal = e.target.closest('.card-modal');
+        if (modal) {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Initialize modal carousel
+    function initModalCarousel(cardId) {
+      const carousel = document.querySelector('[data-carousel-modal="' + cardId + '"]');
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll('.modal-carousel-image'));
+      const prevBtn = carousel.querySelector('.carousel-btn.prev');
+      const nextBtn = carousel.querySelector('.carousel-btn.next');
+      let index = 0;
+
+      const show = (newIndex) => {
+        slides[index].classList.remove('is-active');
+        index = (newIndex + slides.length) % slides.length;
+        slides[index].classList.add('is-active');
+      };
+
+      prevBtn.addEventListener('click', () => show(index - 1));
+      nextBtn.addEventListener('click', () => show(index + 1));
+    }
+
+    // Close modal when clicking overlay
+    document.querySelectorAll('.modal-overlay').forEach((overlay) => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          const modal = overlay.closest('.card-modal');
+          if (modal) {
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        document.querySelectorAll('.card-modal[aria-hidden="false"]').forEach((modal) => {
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        });
       }
     });
   </script>
