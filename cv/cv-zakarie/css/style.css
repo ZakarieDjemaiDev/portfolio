@@ -598,6 +598,13 @@ a:focus-visible {
   letter-spacing: 0.08em;
 }
 
+.project-description {
+  margin: var(--spacing-xs) 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
 .project-placeholder {
   margin: 0 0 var(--spacing-xs) 0;
   font-size: 0.9rem;
